@@ -77,12 +77,12 @@
                     layout.enable();
                 });
 
-                console.log("loading mock_atlas");
+                console.log("loading mutsig_ranks");
                 $.ajax({
-                    "url": "mock_atlas.html",
+                    "url": "mock_atlas/mutsig_ranks.html",
                     "type": "GET",
                     "success": function(o) {
-                        $("#mock-atlas").html(o);
+                        $(".mutsig-ranks").html(o);
                     }
                 });
             });
@@ -95,7 +95,7 @@
             <li data-row="3" data-col="1" data-sizex="1" data-sizey="1" class="gs_w">2</li>
 
             <li data-row="3" data-col="2" data-sizex="2" data-sizey="1" class="gs_w">3</li>
-            <li id="mock-atlas" data-row="1" data-col="3" data-sizex="6" data-sizey="5" class="gs_w">4</li>
+            <li data-row="1" data-col="3" data-sizex="6" data-sizey="5" class="gs_w mutsig-ranks">4</li>
 
             <li class="try gs_w" data-row="1" data-col="5" data-sizex="1" data-sizey="1">5</li>
             <li data-row="2" data-col="1" data-sizex="2" data-sizey="1" class="gs_w">6</li>
