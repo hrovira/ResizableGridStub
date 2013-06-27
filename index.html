@@ -47,7 +47,18 @@
                     }
 
                     layout.resize_widget(elmObj, grid_w, grid_h);
-                };
+                }
+
+            function fetchMock(mockId, $el) {
+                console.log("fetchMock(" + mockId + ")");
+                $.ajax({
+                    "url": "mock_atlas/" + mockId + ".html",
+                    "type": "GET",
+                    "success": function(o) {
+                        $el.html(o);
+                    }
+                });
+            }
 
             $(document).ready(function () {
                 layout=$(".gridster ul").gridster({
@@ -55,7 +66,7 @@
                     widget_base_dimensions: [grid_size, grid_size],
                     shift_larger_widgets_down: false
                 }).data('gridster');
-                $(".gridster ul").children('li').each(function(i,v) { 
+                $(".gridster ul").children('li').each(function(i,v) {
                     console.log("making element resizable")
                     $(v).resizable({
                         grid: [grid_size + (grid_margin * 2), grid_size + (grid_margin * 2)],
@@ -77,14 +88,8 @@
                     layout.enable();
                 });
 
-                console.log("loading mutsig_ranks");
-                $.ajax({
-                    "url": "mock_atlas/mutsig_ranks.html",
-                    "type": "GET",
-                    "success": function(o) {
-                        $(".mutsig-ranks").html(o);
-                    }
-                });
+                fetchMock("mutsig_ranks", $(".mutsig-ranks"));
+                fetchMock("sample_distributions", $(".sample-distributions"));
             });
         </script>
     </head>
@@ -98,7 +103,7 @@
             <li data-row="1" data-col="3" data-sizex="6" data-sizey="5" class="gs_w mutsig-ranks">4</li>
 
             <li class="try gs_w" data-row="1" data-col="5" data-sizex="1" data-sizey="1">5</li>
-            <li data-row="2" data-col="1" data-sizex="2" data-sizey="1" class="gs_w">6</li>
+            <li data-row="2" data-col="1" data-sizex="6" data-sizey="7" class="gs_w sample-distributions">6</li>
             <li data-row="3" data-col="4" data-sizex="1" data-sizey="1" class="gs_w">7</li>
 
             <li data-row="1" data-col="6" data-sizex="1" data-sizey="1" class="gs_w">8</li>
