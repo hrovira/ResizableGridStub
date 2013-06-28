@@ -22,6 +22,7 @@ body {
     font-size: 1em;
     line-height: 1.4;
     background: #004756;
+    margin: 5px;
 }
 
 /* Gridster styles */
@@ -36,7 +37,7 @@ body {
 }
 
 .gridster, .content, .gridster2 {
-    width: 940px;
+    /*width: 940px;*/
     margin: 0 auto;
 
     opacity: .8;
@@ -53,7 +54,7 @@ body {
 }
 
 .content p {
-    margin: 25px;
+    margin: 15px;
 }
 
 .gridster .gs_w, .gridster2 .gs_w {

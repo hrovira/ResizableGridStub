@@ -27,8 +27,7 @@
         <script type="text/javascript">
             var layout;
             var grid_size = 100;
-            var grid_margin = 2;
-            var gridster = "";
+            var grid_margin = 4;
 
             function resizeBlock(elmObj) {
 
@@ -64,7 +63,7 @@
                 layout=$(".gridster ul").gridster({
                     widget_margins: [grid_margin, grid_margin],
                     widget_base_dimensions: [grid_size, grid_size],
-                    shift_larger_widgets_down: false
+                    shift_larger_widgets_down: true
                 }).data('gridster');
                 $(".gridster ul").children('li').each(function(i,v) {
                     console.log("making element resizable")
@@ -95,22 +94,18 @@
     </head>
     <body>
         <div class="gridster">
-          <ul style="height: 480px; position: relative; ">
-            <li data-row="1" data-col="1" data-sizex="2" data-sizey="1" class="gs_w">1</li>
-            <li data-row="3" data-col="1" data-sizex="1" data-sizey="1" class="gs_w">2</li>
+          <ul style="position: relative;">
+            <li data-row="1" data-col="1" data-sizex="7" data-sizey="7" class="gs_w sample-distributions">1</li>
+            <li data-row="1" data-col="2" data-sizex="5" data-sizey="4" class="gs_w">2</li>
+            <li data-row="1" data-col="3" data-sizex="6" data-sizey="5" class="gs_w mutsig-ranks">3</li>
+            <li data-row="1" data-col="4" data-sizex="4" data-sizey="4" class="try gs_w">4</li>
+            <li data-row="1" data-col="5" data-sizex="4" data-sizey="4" class="gs_w">5</li>
 
-            <li data-row="3" data-col="2" data-sizex="2" data-sizey="1" class="gs_w">3</li>
-            <li data-row="1" data-col="3" data-sizex="6" data-sizey="5" class="gs_w mutsig-ranks">4</li>
+            <li data-row="2" data-col="1" data-sizex="4" data-sizey="4" class="gs_w">6</li>
+            <li data-row="2" data-col="2" data-sizex="4" data-sizey="2" class="gs_w">7</li>
 
-            <li class="try gs_w" data-row="1" data-col="5" data-sizex="1" data-sizey="1">5</li>
-            <li data-row="2" data-col="1" data-sizex="6" data-sizey="7" class="gs_w sample-distributions">6</li>
-            <li data-row="3" data-col="4" data-sizex="1" data-sizey="1" class="gs_w">7</li>
-
-            <li data-row="1" data-col="6" data-sizex="1" data-sizey="1" class="gs_w">8</li>
-            <li data-row="3" data-col="5" data-sizex="1" data-sizey="1" class="gs_w">9</li>
-
-            <li data-row="2" data-col="5" data-sizex="1" data-sizey="1" class="gs_w">10</li>
-            <li data-row="2" data-col="6" data-sizex="1" data-sizey="2" class="gs_w">11</li>
+            <li data-row="3" data-col="1" data-sizex="4" data-sizey="5" class="gs_w">8</li>
+            <li data-row="3" data-col="2" data-sizex="6" data-sizey="3" class="gs_w">9</li>
           </ul>
         </div>
 
